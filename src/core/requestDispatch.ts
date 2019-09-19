@@ -1,9 +1,9 @@
-import { AxiosRequestConfig, AxiosPromise } from './types'
-import xhr from './core/xhr'
-import buildURL from './helper/url'
-import buildData from './helper/data'
-import buildHeaders from './helper/headers'
-export default function axios(config: AxiosRequestConfig): AxiosPromise {
+import { AxiosRequestConfig, AxiosPromise } from '../types'
+import xhr from './xhr'
+import buildURL from '../helper/url'
+import buildData from '../helper/data'
+import buildHeaders from '../helper/headers'
+export default function requestDispatch(config: AxiosRequestConfig): AxiosPromise {
   processConfig(config)
   return xhr(config).then(res => transformResponse(res))
 }

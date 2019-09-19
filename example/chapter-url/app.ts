@@ -1,62 +1,23 @@
 import axios from '../../src/index'
 
 axios({
-  method: 'get',
-  url: '/url/get',
-  params: {
-    foo: ['bar', 'baz']
+  method: 'post',
+  url: '/base/post',
+  data: {
+    a: 1,
+    b: 2
   }
 })
-
+  .then(res => console.log(res.data))
+  .catch(e => console.log(e.message))
 axios({
-  method: 'get',
-  url: '/url/get',
-  params: {
-    foo: {
-      bar: 'baz'
-    }
-  }
+  method: 'post',
+  url: '/base/post',
+  data: {
+    a: 1,
+    b: 2
+  },
+  responseType: 'json'
 })
-
-const date = new Date()
-
-axios({
-  method: 'get',
-  url: '/url/get',
-  params: {
-    date
-  }
-})
-
-axios({
-  method: 'get',
-  url: '/url/get',
-  params: {
-    foo: '@:$, '
-  }
-})
-
-axios({
-  method: 'get',
-  url: '/url/get',
-  params: {
-    foo: 'bar',
-    baz: null
-  }
-})
-
-axios({
-  method: 'get',
-  url: '/url/get#hash',
-  params: {
-    foo: 'bar'
-  }
-})
-
-axios({
-  method: 'get',
-  url: '/url/get?foo=bar',
-  params: {
-    bar: 'baz'
-  }
-})
+  .then(res => console.log(res.data))
+  .catch(e => console.log(e.message))
